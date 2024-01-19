@@ -99,7 +99,7 @@ class SNMPTrap:
                 name = "{}::{}".format(module, symbol)
                 for suffix in indices:
                     name += ".{}".format(suffix)
-                return name, trap_value
+                return name, str(trap_value)
         except (MibNotFoundError, NoSuchObjectError):
             log.warning("Could not find OID: %s", oid)
             return str(oid), str(value)
